@@ -17,24 +17,24 @@ export default function Footer() {
       </h3>
 
       {/* Enlaces del menú */}
-      <nav className="flex justify-center gap-8 mt-6 text-sm">
-        {[
-          { name: "Proyectos", href: "#projects" },
-          { name: "Tecnologías", href: "#skills" },
-          { name: "Experiencia", href: "#experience" },
-          { name: "Contacto", href: "#contact" },
-        ].map((item, i) => (
-          <Link
-            key={i}
-            href={item.href}
-            className="relative group hover:text-white transition"
-          >
-            {item.name}
-            {/* Subrayado animado */}
-            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-sky-500 group-hover:w-full transition-all duration-300"></span>
-          </Link>
-        ))}
-      </nav>
+     <nav className="flex justify-center gap-8 mt-6 text-sm">
+  {[
+    { name: "Proyectos", href: "#proyectos" },
+    { name: "Tecnologías", href: "#skills" },
+    { name: "Experiencia", href: "#experience" },
+    { name: "Contacto", href: "#contact" },
+  ].map((item, i) => (
+    <a
+      key={i}
+      href={item.href}
+      className="relative group hover:text-white transition"
+    >
+      {item.name}
+      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-sky-500 
+        group-hover:w-full transition-all duration-300"></span>
+    </a>
+  ))}
+</nav>
 {/* Redes con efecto glow */}
 <div className="flex justify-center gap-6 mt-10">
   {[
@@ -81,3 +81,4 @@ export default function Footer() {
     </footer>
   );
 }
+
