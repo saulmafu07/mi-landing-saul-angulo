@@ -54,22 +54,33 @@ export default function Projects() {
               `}
             >
               {/* 🖼 IMAGEN (Glass) */}
-              <div
-                className="relative w-full md:w-[45%] rounded-3xl overflow-hidden
-                bg-neutral-900/40 border border-white/10 backdrop-blur-md
-                shadow-[0_0_20px_rgba(0,140,255,0.1)]
-                hover:shadow-[0_0_35px_rgba(0,140,255,0.25)]
-                transition-all duration-500 aspect-video"
-              >
-                <div className="absolute top-0 left-0 right-0 mx-auto w-28 h-[3px] 
-                  bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 rounded-full" />
+            <div
+  className="relative w-full md:w-[45%] rounded-3xl overflow-hidden
+    bg-neutral-900/40 border border-white/10 backdrop-blur-md
+    shadow-[0_0_20px_rgba(0,140,255,0.1)]
+    hover:shadow-[0_0_35px_rgba(0,140,255,0.25)]
+    transition-all duration-500 aspect-video"
+>
+  <div className="absolute top-0 left-0 right-0 mx-auto w-28 h-[3px] bg-gradient-to-r from-sky-500 via-purple-500 to-pink-500 rounded-full" />
 
-                <img
-                  src={p.imagen}
-                  alt={p.nombre}
-                  className="object-cover w-full h-full opacity-85 hover:opacity-100 transition duration-500"
-                />
-              </div>
+  {/* Imagen con estilo más dark + neon */}
+  <img
+    src={p.imagen}
+    alt={p.nombre}
+    className="
+      object-cover w-full h-full
+      opacity-85 hover:opacity-100
+      transition duration-500
+      contrast-125 brightness-[0.85] saturate-125
+      hover:brightness-100 hover:saturate-150
+    "
+  />
+
+  {/* Overlay neon para unificar estilo */}
+  <div className="absolute inset-0 bg-gradient-to-br 
+    from-black/40 via-purple-500/10 to-sky-500/10 
+    mix-blend-soft-light pointer-events-none"></div>
+</div>
 
               {/* 📄 DESCRIPCIÓN */}
               <div
@@ -105,3 +116,4 @@ export default function Projects() {
     </section>
   );
 }
+
